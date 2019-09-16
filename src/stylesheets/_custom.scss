@@ -1,0 +1,201 @@
+html, body{
+    background-color: $background;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    color: $white;
+    margin: .5rem;
+}
+
+.row{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(flex-start);
+}
+
+.container{
+    margin: auto;
+    width: 95%;
+
+    @media(min-width: 620px){
+        width: 55%;
+    }
+
+    @media(min-width: 992px){
+        width: 35%;
+    }
+}
+
+.heading-wrapper{
+    position: relative;
+    margin: 120px auto 20px auto;
+    @include align-items(flex-end);
+
+    .box{
+        background-color: $white;    
+        padding: .5rem;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    h1{
+        color: $background;
+        text-transform: uppercase;
+        text-align: right;
+        margin: 0px;
+    }
+
+    img{
+        position: absolute;
+        z-index: 1;
+        left: -25px;
+        bottom: -20px;
+        width: 190px;
+        
+        @media(min-width: 620px){
+            width: 150px;
+        }
+    }
+
+    
+    @media(min-width: 1024px){
+        margin: 100px auto 20px auto;
+        
+        img{
+            left: -60px;
+            width: 170px;
+        }
+    }
+}
+
+.ranking-wrapper{
+    margin: auto;
+
+    .rank-item{
+        padding: .5rem 1rem;
+
+        &:nth-child(odd){
+            background-color: $white;
+        }
+
+        &:nth-child(even){
+            background-color: $gray;
+        }
+
+        .image{
+            position: relative;
+
+            img{
+                border-radius: 50%;
+                width: 85px;
+                height: 80px;
+            }
+            
+            span{
+                background-color: $gray;
+                color: $subtitle;
+                font-weight: 800;
+                padding: 5px 10px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 5px;
+                right: 0px;
+            }
+        }
+
+        .content-box{
+            margin: auto 1.5rem; 
+
+            h2{
+                color: $red;
+                font-weight: 600;
+                margin: 0;
+            }
+            
+            p{
+                color: $subtitle;
+                margin: 0;
+                font-weight: 600;
+            }
+        } 
+
+        &:hover{
+            background-color: $red;
+            
+            .content-box{
+                h2, p{
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: $white;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 15%;
+    right: 15px;
+    opacity: 0;
+    @include transition;
+    @include flexbox;
+    @include justify-content(space-around);
+
+    @media(min-width: 992px){
+        right: -230px;
+        bottom: 10%;
+    }
+
+    h3{
+        background-color: $red;
+        color: $white;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: .8rem;
+        margin: 0px;
+        padding: 10px 15px;
+    }
+
+    .positive{
+        h3{
+            border-radius: 5px 0 0 0;
+        }
+
+        border-right: 1px solid $subtitle;
+    }
+
+    .negative{
+        h3{
+            border-radius: 0 5px 0 0;
+        }
+    }
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $subtitle;
+    }
+}
+
+.tooltip .tooltiptext::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 34px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-right: 10px solid $white; 
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

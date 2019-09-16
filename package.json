@@ -1,0 +1,24 @@
+{
+  "name": "R7FrontendTest",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha ./src/__test__/**/*.test.js"
+  },
+  "dependencies": {
+    "connect": "~3.1.1",
+    "serve-static": "~1.5.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-json": "^0.1.4",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "mocha": "^6.2.0"
+  }
+}
