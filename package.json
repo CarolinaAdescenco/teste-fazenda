@@ -6,8 +6,8 @@
     "test": "mocha ./src/__test__/**/*.test.js"
   },
   "dependencies": {
-    "connect": "~3.1.1",
-    "serve-static": "~1.5.3"
+    "connect": "~3.7.0",
+    "serve-static": "~1.15.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
